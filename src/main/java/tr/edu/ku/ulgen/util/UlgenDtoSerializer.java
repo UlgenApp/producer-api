@@ -49,6 +49,9 @@ public class UlgenDtoSerializer implements Serializer<UlgenDto> {
         }
     }
 
+    /**
+     * Closes the serializer. This implementation is a no-op.
+     */
     @Override
     public void close() {
     }
