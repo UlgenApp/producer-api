@@ -7,6 +7,13 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 import tr.edu.ku.ulgen.dto.UlgenDto;
 
+/**
+ * ProducerController is a RESTful web service controller responsible for handling
+ * requests related to producing messages to a Kafka topic. It uses a KafkaTemplate
+ * to send messages to the Kafka topic.
+ *
+ * @author Kaan Turkmen
+ */
 @RestController
 @RequestMapping("/api/v1/producer")
 @AllArgsConstructor
