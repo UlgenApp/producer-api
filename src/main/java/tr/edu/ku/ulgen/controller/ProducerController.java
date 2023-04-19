@@ -21,8 +21,15 @@ import tr.edu.ku.ulgen.dto.UlgenDto;
 public class ProducerController {
     private KafkaTemplate<String, UlgenDto> kafkaTemplate;
 
+    /**
+     * Produces Kafka Entry consists of User Information.
+     *
+     * @param request a {@link UlgenDto} containing user information.
+     *
+     * @return a {@link ResponseEntity} provides the status of the producing process.
+     */
     @PostMapping("/produce")
-    public ResponseEntity<?> authenticate(@RequestBody UlgenDto request) {
+    public ResponseEntity<?> produce(@RequestBody UlgenDto request) {
         log.info("Produce request is received by the producer microservice: {}", request);
         return ResponseEntity.ok(kafkaTemplate.send("ulgen", request.getUserId().toString(), request));
     }
